@@ -5,6 +5,13 @@
 
 using namespace std;
 
+struct ruangKelas {
+	string ruang;
+	int kapasitas;
+	string lokasi;
+	string fasilitas;
+	
+}r;
 
 struct jadwal_kuliah{
 	string dosen;
@@ -12,38 +19,29 @@ struct jadwal_kuliah{
 	string waktu;
 	string kebutuhan;
 	
-};
+}j;
 
 
-struct ruangan {
-	string nama;
-	int kapasitas;
-	string lokasi;
-	string fasilitas;
-	
-};
 
-vector<ruangan>daftarruang; //menyimpan list semua ruangan
-vector<jadwal_kuliah>jadwalmatkul; //menyimpan semua jadwal kuliah
 
-//Hanya dua user yang bisa login:
+vector<ruangan>daftarruang; 
+vector<jadwal_kuliah>jadwalmatkul; 
+
+
 bool masuk(string username, string password){
 	return  (username=="admin" && password=="1994") || (username=="mhs" && password=="1994");
 }
  
-//fungsi fungsi
+
 void tambahruangbaru(){
-	ruangan ruang;
 	cout<<"nama ruang : ";
-	cin.ignore();
-	getline(cin, ruang.nama);
+	cin>>r.ruang;
 	cout<<"kebutuhan kapasitas  : ";
-	cin>>ruang.kapasitas;
-	cin.ignore();
+	cin>>r.kapasitas;
 	cout<<"lokasi ruang  : ";
-	getline(cin, ruang.lokasi);
+	cin>>r.lokasi;
 	cout<<"fasilitas ruang  : ";
-	getline(cin, ruang.fasilitas);
+	cin>>r.fasilitas;
 	daftarruang.push_back(ruang);
 	cout<<"ruangan ditambahkan"<<endl;
 }
@@ -52,14 +50,13 @@ void tambahruangbaru(){
  void nambahjadwal (){
  	jadwal_kuliah jadwal;
  	cout<<"Dosen : ";
- 	cin.ignore();
- 	getline(cin, jadwal.dosen);
+ 	cin>>j.dosen;
  	cout<<"Matakuliah : ";
- 	getline(cin, jadwal.matkul);
+ 	cin>>j.matkul;
  	cout<<"Waktu : ";
- 	getline(cin, jadwal.waktu);
+ 	cin>>j.waktu;
  	cout<<"kebutuhan ruang: ";
- 	getline(cin, jadwal.kebutuhan);
+ 	cin>>j.kebutuhan;
  	jadwalmatkul.push_back(jadwal);
  	cout<<"jadwal ditambahkan"<<endl;
  	
