@@ -22,9 +22,7 @@ struct jadwal_kuliah{
 }j;
 
 
-
-
-vector<ruangan>daftarruang; 
+vector<ruangKelas>daftarruang; 
 vector<jadwal_kuliah>jadwalmatkul; 
 
 
@@ -34,6 +32,7 @@ bool masuk(string username, string password){
  
 
 void tambahruangbaru(){
+
 	cout<<"nama ruang : ";
 	cin>>r.ruang;
 	cout<<"kebutuhan kapasitas  : ";
@@ -42,7 +41,7 @@ void tambahruangbaru(){
 	cin>>r.lokasi;
 	cout<<"fasilitas ruang  : ";
 	cin>>r.fasilitas;
-	daftarruang.push_back(ruang);
+	daftarruang.push_back(r);
 	cout<<"ruangan ditambahkan"<<endl;
 }
 
@@ -57,13 +56,13 @@ void tambahruangbaru(){
  	cin>>j.waktu;
  	cout<<"kebutuhan ruang: ";
  	cin>>j.kebutuhan;
- 	jadwalmatkul.push_back(jadwal);
+ 	jadwalmatkul.push_back(j);
  	cout<<"jadwal ditambahkan"<<endl;
  	
  }
  void tampilkanruang(){
- 	ruangan ruang;
-    cout<<"Nama ruang : "<< ruang.nama <<endl<< "Kapasitas: "<< ruang.kapasitas
+ 	ruangKelas ruang;
+    cout<<"Nama ruang : "<< ruang.ruang <<endl<< "Kapasitas: "<< ruang.kapasitas
     <<endl<< " Lokasi: " << ruang.lokasi <<endl<< " Fasilitas: " << 
 	ruang.fasilitas << endl;
     
@@ -101,8 +100,6 @@ int main (){
 	 	cout<<"3. Lihat ruangan "<<endl;
 	 	cout<<"4. Lihat jadwal "<<endl;
 	 	cout<<"5. Ubah jadwal"<<endl;
-	 	cout<<"6. Hapus Jadwal "<<endl;
-	 	cout<<"7. Hapus ruang "<<endl;
 		cout<<"0. keluar "<<endl;
 	 } else{
 	 		cout<<"1. Lihat jadwal "<<endl;
